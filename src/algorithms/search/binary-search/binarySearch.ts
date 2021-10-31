@@ -47,3 +47,24 @@ export function binarySearchLeftBorder(nums: number[], target: number) {
     }
     return left;
 }
+
+function binarySearchRecursive(arr: number[], num: number): number {
+    return _binarySearch(arr, num, 0, arr.length - 1);
+}
+
+function _binarySearch(arr: number[], n: number, l: number, r: number): number {
+    if (l >= r) {
+        return arr[l] === n ? l : -1;
+    }
+    let mid = l + ((r - l) >> 1);
+    if (arr[mid] === n) {
+        return mid;
+    } else if (arr[mid] > n) {
+        if (l === mid) {
+            return -1;
+        }
+        return _binarySearch(arr, n, l, mid - 1);
+    } else {
+        return _binarySearch(arr, n, mid + 1, r);
+    }
+}

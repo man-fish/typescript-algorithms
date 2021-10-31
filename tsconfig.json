@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "ES5",
         //编译JS之后需要遵循的标准：es3,es5,es2015(es6)
         "module": "esnext",
         // 定义遵循的JavaScript模块规范。commonjs、AMD和es2015
@@ -13,7 +13,9 @@
         "strict": true,
         // 是否开启严格模式
         "downlevelIteration": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "experimentalDecorators": true
     },
     "include": ["src"]
 }

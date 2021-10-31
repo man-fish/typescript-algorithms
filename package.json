@@ -3,10 +3,12 @@
     "version": "1.0.0",
     "description": "use ts to do algorithms",
     "main": "index.js",
+    "type": "module",
     "devDependencies": {
         "@types/jest": "^26.0.8",
         "husky": "^4.3.0",
         "jest": "^26.2.2",
+        "ramda": "^0.27.1",
         "rimraf": "^3.0.2",
         "ts-jest": "^26.1.4",
         "typescript": "^3.9.7"
@@ -17,11 +19,6 @@
         "build-ts": "tsc -p ./tsconfig.json",
         "build": "npm run clean && npm run build-ts",
         "prepublishOnly": "npm run test && npm run build"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run test"
-        }
     },
     "repository": {
         "type": "git",
@@ -36,5 +33,8 @@
     "bugs": {
         "url": "https://github.com/patrick-prod/typescript-algorithms/issues"
     },
-    "homepage": "https://github.com/patrick-prod/typescript-algorithms#readme"
+    "homepage": "https://github.com/patrick-prod/typescript-algorithms#readme",
+    "dependencies": {
+        "jquery": "^3.6.0"
+    }
 }
