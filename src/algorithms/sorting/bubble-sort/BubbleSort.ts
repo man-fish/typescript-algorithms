@@ -1,4 +1,4 @@
-import Sort from "../Sort";
+import Sort from '../Sort';
 
 export default class BubbleSort<T> extends Sort<T> {
     sort(originalArr: Array<T>) {
@@ -36,5 +36,16 @@ export default class BubbleSort<T> extends Sort<T> {
         }
 
         return array;
+    }
+}
+
+function bubbleSort(arr: number[]) {
+    let n = arr.length;
+    for (let i = 1; i < n; i++) {
+        for (let j = 0; j < n - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+        }
     }
 }
