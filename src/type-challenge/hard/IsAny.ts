@@ -29,3 +29,36 @@ type S11 = IsAny<[]>;
 
 type ST = S1;
 type SF = S2 | S3 | S4 | S5 | S6 | S7 | S8 | S9 | S10 | S11;
+
+enum Human {
+    Man = 1,
+    Woman = 'woman',
+}
+
+const earth = {
+    people: 'woman',
+} as const;
+
+console.log(earth.people === Human.Woman);
+const isWoman = (person: Human.Woman) => person === Human.Woman;
+
+const wn = 'woman' as Human.Woman;
+isWoman(wn);
+
+enum ButtonSize {
+    BG = 'bg',
+    SM = 'sm',
+}
+interface ButtonProps {
+    size: ButtonSize;
+}
+
+function Button(props: ButtonProps) {
+    if (props.size === ButtonSize.BG) {
+        return 'big button';
+    } else {
+        return 'smaill button';
+    }
+}
+
+Button({ size: 'sm' as ButtonSize });

@@ -26,7 +26,7 @@ type ReplaceKeys<T, M extends keyof S, S> = {
 };
 
 type ReplacedNodes = ReplaceKeys<
-    Nodes,
+    NodeA,
     'name' | 'flag',
     { name: number; flag: string }
 >;
